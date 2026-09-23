@@ -1,0 +1,10 @@
+<p>parent-component works!</p>
+<div style="border: 2px solid #333; padding: 20px; margin: 20px;">
+  <h2>=== Parent Component (AppComponent) ===</h2>
+  
+  <p>Thông báo nhận từ Con: <span style="color: red;">{{ messageFromChild }}</span></p>
+  <app-child-component 
+    [receivedData]="'Hello from Parent A'" 
+    (notifyParent)="handleMessage($event)">
+  </app-child-component>
+</div>

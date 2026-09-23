@@ -1,0 +1,42 @@
+<p>catalog works!</p>
+<table border="1" style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>Ma Danh Muc</th>
+      <th>Ten Danh Muc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let cate of categories">
+      <tr style="background-color: #e6f7ff; font-weight: bold;">
+        <td>{{ cate.Cateid }}</td>
+        <td>{{ cate.CateName }}</td>
+      </tr>
+      
+      <tr>
+        <td colspan="2" style="padding: 10px 20px;">
+          <table border="1" style="border-collapse: collapse; width: 100%;">
+            <thead>
+              <tr style="background-color: #fafafa;">
+                <th>Ma San Pham</th>
+                <th>Ten San Pham</th>
+                <th>Gia San Pham</th>
+                <th>Picture</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let prod of cate.Products" align="center">
+                <td>{{ prod.ProductId }}</td>
+                <td>{{ prod.ProductName }}</td>
+                <td>{{ prod.Price }}</td>
+                <td>
+                  <img [src]="prod.Image" width="50" height="50" alt="{{ prod.ProductName }}">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
